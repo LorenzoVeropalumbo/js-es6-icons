@@ -113,7 +113,6 @@ let fontIconArray = [
 	}
 ];
 
-
 const fontIcon = document.querySelector('.js-container');
 const selectElement = document.getElementById('select-change');
 console.log(selectElement);
