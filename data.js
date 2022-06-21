@@ -131,6 +131,7 @@ function fontIconArrayToDraw(fontIconArray){
 		const SingleBoxIcon = `
     <div class="box-icon">
       <i class="${family} ${prefix}${name} fa-2x  color-${color}"></i>
+			<span class="icon-name">${name}</span>
     </div>
 		`;
 

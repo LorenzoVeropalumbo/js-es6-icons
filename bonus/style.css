@@ -31,6 +31,11 @@
   background-color: #dddddd;
 }
 
+.icon-name{
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
 span{
   margin: 20px 10px;
 }
