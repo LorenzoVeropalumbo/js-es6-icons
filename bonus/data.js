@@ -110,7 +110,7 @@ let fontIconArray = [
 		type: 'user',
 		family: 'fas',
 		color: 'blue'
-	}
+	},
 ];
 
 const fontIcon = document.querySelector('.js-container');
@@ -158,10 +158,10 @@ fontIconArray.forEach((element) => {
 		typeIcons = "second";
 		
 	}
-	else if(element.type !==  typeIcons && !typeIcons.includes(element.type)){
+	else if(element.type !==  typeIcons && !typeIcons.includes(element.type.toLowerCase())){
 		
 		const selectOption = `
-			<option value="${element.type}">${element.type}</option>
+			<option value="${element.type.toLowerCase()}">${element.type.toLowerCase()}</option>
 		`;
 
 		selectElement.innerHTML += selectOption;
