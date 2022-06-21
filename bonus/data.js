@@ -142,6 +142,34 @@ function fontIconArrayToDraw(fontIconArray){
 	});
 }
 
+let typeIcons = "all";
+
+fontIconArray.forEach((element) => {
+		
+	const {name,prefix,type,family,color} = element;
+
+	if (typeIcons === "all"){
+		const selectOption = `
+		<option value="${typeIcons}">${typeIcons}</option>
+		`;
+
+		selectElement.innerHTML += selectOption;
+
+		typeIcons = "second";
+	}
+	else if(type !==  typeIcons){
+		
+		const selectOption = `
+			<option value="${type}">${type}</option>
+		`;
+
+		selectElement.innerHTML += selectOption;
+
+		typeIcons = type;
+	}
+	
+});
+
 
 selectElement.addEventListener('change', (event) => {
   
