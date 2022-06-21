@@ -143,6 +143,7 @@ function fontIconArrayToDraw(fontIconArray,fontIcon){
 }
 
 let typeIcons = "all";
+let typeArrey = [];
 // creamo la funzione per creare le option nella select
 fontIconArray.forEach((element) => {
 	
@@ -153,10 +154,11 @@ fontIconArray.forEach((element) => {
 		`;
 
 		selectElement.innerHTML += selectOption;
-
+		typeArrey.push(typeIcons);
 		typeIcons = "second";
+		
 	}
-	else if(element.type !==  typeIcons){
+	else if(element.type !==  typeIcons && !typeIcons.includes(element.type)){
 		
 		const selectOption = `
 			<option value="${element.type}">${element.type}</option>
@@ -164,6 +166,7 @@ fontIconArray.forEach((element) => {
 
 		selectElement.innerHTML += selectOption;
 
+		typeArrey.push(element.type);
 		typeIcons = element.type;
 	}
 
