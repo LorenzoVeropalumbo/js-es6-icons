@@ -127,10 +127,12 @@ function fontIconArrayToDraw(fontIconArray){
 	fontIconArray.forEach((element) => {
 		
 		const {name,prefix,type,family,color} = element;
+
+		const randomColor = getRandomColor();
 		
 		const SingleBoxIcon = `
     <div class="box-icon">
-      <i class="${family} ${prefix}${name} fa-2x  color-${color}"></i>
+      <i class="${family} ${prefix}${name} fa-2x" style="color:${randomColor}; "></i>
     </div>
 		`;
 
@@ -154,3 +156,12 @@ selectElement.addEventListener('change', (event) => {
 		fontIconArrayToDraw(fontIconArray);
 	}
 });
+
+function getRandomColor() {
+  let letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
