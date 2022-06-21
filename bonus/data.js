@@ -118,10 +118,10 @@ const selectElement = document.getElementById('select-change');
 console.log(selectElement);
 
 
-fontIconArrayToDraw(fontIconArray);
+fontIconArrayToDraw(fontIconArray,fontIcon);
 
 // creamo la funzione per disegnare le icone
-function fontIconArrayToDraw(fontIconArray){
+function fontIconArrayToDraw(fontIconArray,fontIcon){
 	
 	fontIconArray.forEach((element) => {
 		
@@ -143,12 +143,11 @@ function fontIconArrayToDraw(fontIconArray){
 }
 
 let typeIcons = "all";
-
+// creamo la funzione per creare le option nella select
 fontIconArray.forEach((element) => {
-		
-	const {name,prefix,type,family,color} = element;
-
+	
 	if (typeIcons === "all"){
+		
 		const selectOption = `
 		<option value="${typeIcons}">${typeIcons}</option>
 		`;
@@ -157,17 +156,17 @@ fontIconArray.forEach((element) => {
 
 		typeIcons = "second";
 	}
-	else if(type !==  typeIcons){
+	else if(element.type !==  typeIcons){
 		
 		const selectOption = `
-			<option value="${type}">${type}</option>
+			<option value="${element.type}">${element.type}</option>
 		`;
 
 		selectElement.innerHTML += selectOption;
 
-		typeIcons = type;
+		typeIcons = element.type;
 	}
-	
+
 });
 
 
@@ -181,11 +180,11 @@ selectElement.addEventListener('change', (event) => {
 			return element.type === selectElement.value;
 		});
 
-		fontIconArrayToDraw(iconToPrint);
+		fontIconArrayToDraw(iconToPrint ,fontIcon);
 
 	} else {
 		
-		fontIconArrayToDraw(fontIconArray);
+		fontIconArrayToDraw(fontIconArray ,fontIcon);
 	}
 });
 

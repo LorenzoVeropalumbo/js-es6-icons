@@ -32,8 +32,9 @@
 }
 
 .icon-name{
-  vertical-align: middle;
+  vertical-align: super;
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 
