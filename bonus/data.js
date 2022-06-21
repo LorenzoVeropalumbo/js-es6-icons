@@ -128,6 +128,8 @@ function fontIconArrayToDraw(fontIconArray){
 		const {name,prefix,type,family,color} = element;
 
 		const randomColor = getRandomColor();
+
+		element.color = randomColor;
 		
 		const SingleBoxIcon = `
     <div class="box-icon">
@@ -140,6 +142,7 @@ function fontIconArrayToDraw(fontIconArray){
 	});
 }
 
+
 selectElement.addEventListener('change', (event) => {
   
 	fontIcon.innerHTML = "";
@@ -149,6 +152,7 @@ selectElement.addEventListener('change', (event) => {
 		const iconToPrint = fontIconArray.filter((element) =>{
 			return element.type === selectElement.value;
 		});
+
 		fontIconArrayToDraw(iconToPrint);
 
 	} else {
